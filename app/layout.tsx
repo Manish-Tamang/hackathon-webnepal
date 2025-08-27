@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { IBM_Plex_Sans, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
+import { SessionProvider } from "next-auth/react"
+import { AuthProvider } from "@/lib/auth";
 
 const ibmPlexSans = IBM_Plex_Sans({
   weight: ['400', '500', '600', '700'],
@@ -16,7 +18,6 @@ const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair-display'
 })
-
 
 export const metadata: Metadata = {
   title: "Web Nepal",
@@ -32,7 +33,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}>
         <Header />
-        {children}
+        <SessionProvider>
+          <AuthProvider>{children}</AuthProvider>
+        </SessionProvider>
         <Footer />
       </body>
     </html>
