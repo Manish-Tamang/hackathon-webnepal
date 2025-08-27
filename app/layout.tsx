@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { IBM_Plex_Sans, Playfair_Display } from "next/font/google";
+import { Footer } from "@/components/layout/footer";
 
 const ibmPlexSans = IBM_Plex_Sans({
   weight: ['400', '500', '600', '700'],
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
