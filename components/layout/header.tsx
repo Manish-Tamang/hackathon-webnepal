@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Image from "next/image"
 
 export function Header() { 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -22,10 +23,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-white shadow">
-                <span className="text-base font-bold">W</span>
-              </div>
-              <span className="text-lg font-semibold text-gray-900">Web Nepal</span>
+               <Image src="/img/2.png" width={100} height={100} alt="" />
             </Link>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
