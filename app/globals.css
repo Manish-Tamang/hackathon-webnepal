@@ -114,9 +114,21 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-ibm-plex-sans), var(--font-playfair-display),
+      sans-serif;
+  }
+  ::selection {
+    background-color: #3c8a62;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair-display), serif;
   }
 }
