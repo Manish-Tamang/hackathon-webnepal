@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/header";
 import { IBM_Plex_Sans, Playfair_Display } from "next/font/google";
-import { Footer } from "@/components/layout/footer";
 import { SessionProvider } from "next-auth/react"
 import { AuthProvider } from "@/lib/auth";
 
@@ -32,11 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}>
-        <Header />
         <SessionProvider>
           <AuthProvider>{children}</AuthProvider>
         </SessionProvider>
-        <Footer />
       </body>
     </html>
   );
