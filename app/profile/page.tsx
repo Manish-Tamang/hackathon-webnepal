@@ -61,7 +61,7 @@ export default function ProfilePage() {
             <Card>
                 <CardContent className="p-6">
                     <div className="flex items-start gap-6">
-                        <Image src={session?.user?.image ?? "/img/1.jpg"} alt="User Image" width={100} height={100} />
+                        <Image src={session?.user?.image ?? "/img/1.jpg"} alt="User Image" width={100} height={100} className="rounded-[4px]"/>
                         <div className="flex-1">
                             <div className="flex items-center justify-between mb-4">
                                 <div>
@@ -71,7 +71,7 @@ export default function ProfilePage() {
                                 <Button
                                     onClick={() => setIsEditing(!isEditing)}
                                     variant={isEditing ? "secondary" : "default"}
-                                >
+                               className="bg-[#3D8B63] hover:bg-[#3D8B63] text-white rounded-[4px]" >
                                     {isEditing ? "Cancel" : "Edit Profile"}
                                 </Button>
                             </div>
