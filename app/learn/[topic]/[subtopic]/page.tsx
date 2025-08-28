@@ -1,14 +1,21 @@
+"use client";
 
+import { use } from "react";
+import { getLessonContent } from "@/lib/lessons";
+import LearningInterface from "@/components/learn/learning-interface";
+import { notFound } from "next/navigation";
 
+export default function LessonPage({ params }: { params: Promise<{ topic: string; subtopic: string }> }) {
+  const { topic, subtopic } = use(params);
+  const lesson = getLessonContent(topic, subtopic);
 
+  if (!lesson) {
+    return (
+      <div>
+        <p>Not found Courses</p>
+      </div>
+    )
+  }
 
-export default function LessonPage() {
-
-
-
-  return (
-    <div className="flex h-[calc(100vh-3.5rem)]">
-      Slug
-    </div>
-  )
+  return <LearningInterface lesson={lesson} topic={topic} subtopic={subtopic} />;
 }
