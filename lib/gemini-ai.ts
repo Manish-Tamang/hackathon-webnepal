@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { GoogleGenAI } from "@google/genai";
 
 // Initialize with proper error handling
@@ -9,7 +10,12 @@ const getAI = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-import type { Lesson as CourseLesson } from "@/lib/courses";
+type CourseLesson = {
+  title: any;
+  duration: any;
+  content: any;
+  code: string;
+};
 
 export interface Lesson {
   id: string;

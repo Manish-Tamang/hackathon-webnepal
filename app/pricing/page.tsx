@@ -24,19 +24,19 @@ export default function PricingPage() {
               price: "Free",
               features: ["Basics courses", "Community access", "Limited labs"],
               cta: "Get Started",
-              href: "/signup",
+              href: "#",
             },{
               name: "Pro",
               price: "रु 999/month",
               features: ["All courses", "AI feedback", "Unlimited labs", "Certificates"],
               cta: "Upgrade to Pro",
-              href: "/signup",
+              href: "#",
             },{
               name: "Team",
               price: "रु 1,599/month",
               features: ["Pro features", "Team analytics", "Priority support"],
               cta: "Contact Sales",
-              href: "/about",
+              href: "#",
             }].map((tier) => (
               <article key={tier.name} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100">
                 <h3 className="text-lg font-semibold text-gray-900">{tier.name}</h3>
