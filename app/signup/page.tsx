@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Header } from "@/components/layout/header"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { Footer} from "@/components/layout/footer" 
 
 export default function SignupPage() {
   const [email, setEmail] = useState("")
@@ -68,6 +69,8 @@ export default function SignupPage() {
 
   return (
     <>
+    <Header/>
+
       <main className="flex items-center justify-center py-16">
         <div className="w-full max-w-md space-y-8">
           <div className="space-y-3">
@@ -170,6 +173,7 @@ export default function SignupPage() {
           </div>
         </div>
       </main>
+      <Footer/>
     </>
   )
 }
