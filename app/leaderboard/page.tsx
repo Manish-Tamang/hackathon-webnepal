@@ -6,6 +6,10 @@ import { Trophy, Medal, Award } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Image from "next/image";
+import { RiMedalFill } from "react-icons/ri";
+import { RiMedalLine } from "react-icons/ri";
+import { TfiMedallAlt } from "react-icons/tfi";
+
 export default function LeaderboardPage() {
   const topThree = mockLeaderboardUsers.slice(0, 3);
   const restOfUsers = mockLeaderboardUsers.slice(3);
@@ -13,35 +17,22 @@ export default function LeaderboardPage() {
   const getPodiumIcon = (rank: number) => {
     switch (rank) {
       case 1:
-        return <Trophy className="h-8 w-8 text-yellow-500" />;
+        return <RiMedalFill className="h-8 w-8 text-yellow-500" />;
       case 2:
-        return <Medal className="h-8 w-8 text-gray-400" />;
+        return <RiMedalLine className="h-8 w-8 text-gray-400" />;
       case 3:
-        return <Award className="h-8 w-8 text-amber-600" />;
+        return <TfiMedallAlt className="h-8 w-8 text-amber-600" />;
       default:
         return null;
     }
   };
 
-  const getPodiumStyle = (rank: number) => {
-    switch (rank) {
-      case 1:
-        return "bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-200 shadow-lg";
-      case 2:
-        return "bg-gradient-to-br from-gray-50 to-slate-50 border-gray-200 shadow-md";
-      case 3:
-        return "bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200 shadow-md";
-      default:
-        return "";
-    }
-  };
 
   return (
     <>
       <Header />
-      <div className="max-w-6xl mx-auto space-y-16">
-        {/* Header */}
-        <section className="relative mt-4 overflow-hidden rounded-[4px] bg-gradient-to-br from-emerald-50 via-white to-emerald-50 border border-emerald-100 shadow-sm">
+      <div className="max-w-4xl mx-auto space-y-16">
+        <section className="relative mt-4 overflow-hidden rounded-[4px]">
           <div className="px-6 py-12 sm:py-16 text-center">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
@@ -70,46 +61,8 @@ export default function LeaderboardPage() {
             </div>
           </div>
         </section>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {topThree.map((user) => (
-            <div
-              key={user.id}
-              className={`border-2 p-6 text-center rounded-[4px] transition-all duration-300 ${getPodiumStyle(
-                user.rank
-              )}`}
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                  {getPodiumIcon(user.rank)}
-                </div>
-              </div>
-              <div className="h-20 w-20 mx-auto mb-6">
-                <Image
-                  src={user.image}
-                  alt={user.name}
-                  width={100}
-                  height={100}
-                  className="object-cover w-20 h-20"
-                />
-              </div>
-              <h3 className="font-bold text-xl mb-2 text-black">{user.name}</h3>
-              <p className="text-sm text-gray-600 mb-4">@{user.username}</p>
-              <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {user.xp.toLocaleString()}
-              </div>
-              <p className="text-sm text-gray-600 font-medium">XP Points</p>
-              <div className="mt-4">
-                <Badge className="bg-blue-100 text-blue-700 border-0 px-3 py-1">
-                  #{user.rank} Rank
-                </Badge>
-              </div>
-            </div>
-          ))}
-        </div>
-
         <div className="bg-white rounded-[4px] border border-gray-200 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 px-8 py-6 border-b border-gray-200">
+          <div className="px-8 py-6 border-b border-gray-200">
             <h2 className="text-xl font-bold text-gray-800">
               Complete Rankings
             </h2>
@@ -142,7 +95,7 @@ export default function LeaderboardPage() {
                 {mockLeaderboardUsers.map((user, index) => (
                   <tr
                     key={user.id}
-                    className="border-b border-gray-100 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200"
+                    className="border-b border-gray-100 transition-all duration-200"
                   >
                     <td className="p-6">
                       <div className="flex items-center gap-3">
@@ -164,13 +117,13 @@ export default function LeaderboardPage() {
                     </td>
                     <td className="p-6">
                       <div className="flex items-center gap-4">
-                        <div className="h-10 w-10">
+                        <div className="h-10 w-10 overflow-hidden rounded-full">
                           <Image
                             src={user.image}
                             alt={user.name}
-                            width={100}
-                            height={100}
-                            className="object-cover"
+                            width={40}
+                            height={40}
+                            className="h-full w-full object-cover"
                           />
                         </div>
                         <div>
@@ -184,7 +137,7 @@ export default function LeaderboardPage() {
                       </div>
                     </td>
                     <td className="p-6">
-                      <div className="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      <div className="font-bold text-lg">
                         {user.xp.toLocaleString()}
                       </div>
                     </td>
