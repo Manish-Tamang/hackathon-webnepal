@@ -32,7 +32,7 @@ export default function TopicPage({ params }: { params: Promise<{ topic: string 
     };
 
     return (
-        <div className="container max-w-7xl py-8">
+        <div className="container max-w-5xl py-8">
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-[#2a6b4a] mb-2 capitalize">
                     {topic} Course
@@ -49,13 +49,13 @@ export default function TopicPage({ params }: { params: Promise<{ topic: string 
 
                     return (
                         <Link key={subtopic} href={`/learn/${topic}/${subtopic}`}>
-                            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                            <Card className="hover:shadow-sm border-1 rounded-[4px] transition-shadow cursor-pointer">
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <CardTitle className="text-lg">{lesson.title}</CardTitle>
                                         {isCompleted && (
-                                            <Badge className="bg-[#52AF83] text-white">
-                                                <CheckCircle className="w-3 h-3 mr-1" />
+                                            <Badge className="bg-[#52AF83] rounded-full text-white">
+                                                <CheckCircle className="w-3 h-3" />
                                                 Done
                                             </Badge>
                                         )}

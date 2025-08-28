@@ -20,8 +20,8 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="border-b border-emerald-100 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
@@ -56,9 +56,6 @@ export function Header() {
                     </div>
                   </div>
                   <DropdownMenuSeparator className="bg-gray-200" />
-                  <DropdownMenuItem asChild className="text-black hover:bg-gray-50">
-                    <Link href="/dashboard">Dashboard</Link>
-                  </DropdownMenuItem>
                   <DropdownMenuItem asChild className="text-black hover:bg-gray-50">
                     <Link href="/profile">Profile</Link>
                   </DropdownMenuItem>
@@ -140,9 +137,9 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => {
-                      signOut()
-                      setIsMobileMenuOpen(false)
-                    }}
+                    signOut()
+                    setIsMobileMenuOpen(false)
+                  }}
                   className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
                 >
                   Log out

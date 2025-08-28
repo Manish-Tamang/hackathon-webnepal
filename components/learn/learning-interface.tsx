@@ -83,7 +83,7 @@ export default function LearningInterface({ lesson, topic, subtopic }: LearningI
     }
   }
 
-  // Simple navigation helpers
+
   const getNextLesson = () => lesson.nextLesson ? `/learn/${lesson.nextLesson.topic}/${lesson.nextLesson.subtopic}` : null
   const getPrevLesson = () => lesson.prevLesson ? `/learn/${lesson.prevLesson.topic}/${lesson.prevLesson.subtopic}` : null
 
@@ -107,22 +107,22 @@ export default function LearningInterface({ lesson, topic, subtopic }: LearningI
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold">{lesson.title}</h1>
             {currentProgress?.completed && (
-              <Badge className="bg-[#52AF83] text-white">
-                <CheckCircle className="w-3 h-3 mr-1" />
+              <Badge className="bg-[#52AF83] rounded-full text-white">
+                <CheckCircle className="w-3 h-3" />
                 Completed
               </Badge>
             )}
           </div>
           <div className="ml-auto flex gap-2">
             {prevLessonUrl && (
-              <Button asChild variant="outline" size="sm">
+              <Button asChild variant="outline" size="sm" className="rounded-[4px]">
                 <Link href={prevLessonUrl}>
                   <ArrowLeft className="mr-1 h-4 w-4" /> Previous
                 </Link>
               </Button>
             )}
             {nextLessonUrl && (
-              <Button asChild size="sm">
+              <Button asChild size="sm" className="bg-[#3D8B63] hover:bg-[#3D8B63] rounded-[4px]">
                 <Link href={nextLessonUrl}>
                   Next <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -181,9 +181,9 @@ export default function LearningInterface({ lesson, topic, subtopic }: LearningI
                 <Button 
                   onClick={handleMarkComplete}
                   size="sm"
-                  className="bg-[#52AF83] hover:bg-[#3C8A62] text-white"
+                  className="bg-[#52AF83] hover:bg-[#3C8A62] rounded-full text-white"
                 >
-                  <CheckCircle className="w-4 h-4 mr-2" />
+                  <CheckCircle className="w-4 h-4" />
                   Mark Complete
                 </Button>
               </AlertDescription>
@@ -220,7 +220,7 @@ export default function LearningInterface({ lesson, topic, subtopic }: LearningI
                 onClick={handleShowSolution}
                 variant={showSolution ? "default" : "outline"}
                 size="sm"
-                className="gap-1"
+                className="gap-1 rounded-[4px]"
               >
                 <LightbulbIcon className="h-4 w-4" />
                 {showSolution ? "Hide Solution" : "Show Solution"}

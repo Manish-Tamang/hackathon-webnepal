@@ -22,7 +22,7 @@ export default function LoginPage() {
     getSession().then((session) => {
       if (session) {
         alert("Login Bhaisakeko xa!")
-        router.push("/login")
+        router.push("/profile")
       }
     })
   }, [router])
