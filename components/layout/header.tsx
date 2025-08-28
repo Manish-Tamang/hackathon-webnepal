@@ -92,8 +92,6 @@ export function Header() {
             </Button>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-emerald-100 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
