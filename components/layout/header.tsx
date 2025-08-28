@@ -150,7 +150,6 @@ export function Header() {
                     Log out
                   </button>
                 </>
-              ) : (
                 <Link
                   href="/signup"
                   className="block px-3 py-2 text-base font-medium text-emerald-700 hover:bg-emerald-50"
