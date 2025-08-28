@@ -27,13 +27,13 @@ export default function PricingPage() {
               href: "/signup",
             },{
               name: "Pro",
-              price: "रु 999/mo",
+              price: "रु 999/month",
               features: ["All courses", "AI feedback", "Unlimited labs", "Certificates"],
               cta: "Upgrade to Pro",
               href: "/signup",
             },{
               name: "Team",
-              price: "रु 1,599/mo",
+              price: "रु 1,599/month",
               features: ["Pro features", "Team analytics", "Priority support"],
               cta: "Contact Sales",
               href: "/about",

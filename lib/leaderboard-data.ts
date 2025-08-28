@@ -48,7 +48,7 @@ export const mockLeaderboardUsers: LeaderboardUser[] = [
   {
     id: "3",
     image:"/img/144.jpg",
-    name: "Adimin Imo",
+    name: "Alexander",
     username: "alexk",
     xp: 2520,
     rank: 3,
@@ -91,7 +91,7 @@ export const mockLeaderboardUsers: LeaderboardUser[] = [
   },
   {
     id: "7",
-    image:"/img/14.jpg",
+    image:"/img/manish.png",
     name: "James Park",
     username: "jamesp",
     xp: 1980,
@@ -124,7 +124,7 @@ export const mockLeaderboardUsers: LeaderboardUser[] = [
   },
   {
     id: "10",
-    image:"/img/18.jpg",
+    image:"/img/Nuxgajurel.jpg",
     name: "Sophie Davis",
     username: "sophied",
     xp: 1590,
