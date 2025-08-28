@@ -13,8 +13,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
+import { useSession, signOut } from "next-auth/react"
 
-export function Header() { 
+export function Header() {
+  const { data: session } = useSession()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
@@ -23,7 +25,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-               <Image src="/img/2.png" width={100} height={100} alt="" />
+              <Image src="/img/2.png" width={100} height={100} alt="" />
             </Link>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
@@ -39,22 +41,18 @@ export function Header() {
             <Link href="/about" className="text-gray-700 hover:text-emerald-700 transition-colors">
               About
             </Link>
-          
+            {session?.user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 p-0">
-                    <Avatar className="h-8 w-8 border border-gray-200">
-                      <AvatarFallback className="bg-white text-black font-medium">
-                        N
-                      </AvatarFallback>
-                    </Avatar>
+                    <Image src={session.user.image ?? '/img/1.jpg'} alt="" width={100} height={100} className="rounded-full" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 border border-gray-200" align="end" forceMount>
+                <DropdownMenuContent className="w-56 border rounded-[4px] border-gray-200" align="end" forceMount>
                   <div className="flex items-center justify-start gap-2 p-2">
                     <div className="flex flex-col space-y-1 leading-none">
-                      <p className="font-medium text-black">nux@gmail.com</p>
-                      <p className="w-[200px] truncate text-sm text-gray-600">email</p>
+                      <p className="font-medium text-black">{session.user.name}</p>
+                      <p className="w-[200px] truncate text-sm text-gray-600">{session.user.email}</p>
                     </div>
                   </div>
                   <DropdownMenuSeparator className="bg-gray-200" />
@@ -65,15 +63,16 @@ export function Header() {
                     <Link href="/profile">Profile</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator className="bg-gray-200" />
-                  <DropdownMenuItem className="text-black hover:bg-gray-50">
+                  <DropdownMenuItem onClick={() => signOut()} className="text-white bg-red-500 hover:bg-red-500">
                     Log out
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-         
+            ) : (
               <Button asChild className="bg-emerald-600 text-white hover:bg-emerald-700 rounded-full px-5">
                 <Link href="/signup">Sign Up</Link>
               </Button>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -124,37 +123,38 @@ export function Header() {
                 About
               </Link>
 
-                <>
-                  <Link
-                    href="/dashboard"
-                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    href="/profile"
-                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Profile
-                  </Link>
-                  <button
-                    onClick={() => {
-                      setIsMobileMenuOpen(false)
-                    }}
-                    className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
-                  >
-                    Log out
-                  </button>
-                </>
+              <>
                 <Link
-                  href="/signup"
-                  className="block px-3 py-2 text-base font-medium text-emerald-700 hover:bg-emerald-50"
+                  href="/dashboard"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Sign Up
+                  Dashboard
                 </Link>
+                <Link
+                  href="/profile"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Profile
+                </Link>
+                <button
+                  onClick={() => {
+                      signOut()
+                      setIsMobileMenuOpen(false)
+                    }}
+                  className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
+                >
+                  Log out
+                </button>
+              </>
+              <Link
+                href="/signup"
+                className="block px-3 py-2 text-base font-medium text-emerald-700 hover:bg-emerald-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sign Up
+              </Link>
             </div>
           </div>
         )}

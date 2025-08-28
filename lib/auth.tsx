@@ -27,7 +27,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Check for existing session
     const savedUser = localStorage.getItem("webnepal_user")
     if (savedUser) {
       setUser(JSON.parse(savedUser))
@@ -36,7 +35,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    // Mock authentication - replace with real auth logic
     if (email && password) {
       const mockUser: User = {
         id: "1",
@@ -54,7 +52,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const signup = async (email: string, password: string): Promise<boolean> => {
-    // Mock signup - replace with real auth logic
     if (email && password) {
       const mockUser: User = {
         id: "1",

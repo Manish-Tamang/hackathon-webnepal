@@ -70,7 +70,7 @@ export function Footer() {
                 <div className="mt-16 pt-8 border-t border-gray-200">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         <p className="text-gray-500 text-sm">
-                            © 2024 Web Nepal. All rights reserved.
+                            © 2025 Web Nepal. All rights reserved.
                         </p>
                         <div className="flex space-x-6 text-sm text-gray-500">
                             <span className="hover:text-[#3D8B63] transition-colors cursor-pointer">Terms of Service</span>
