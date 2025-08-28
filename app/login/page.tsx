@@ -141,7 +141,7 @@ export default function LoginPage() {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-blue-600 text-white hover:bg-blue-700 border-0"
+                className="w-full  bg-[#3D8B63] hover:bg-[#3D8B63] text-white  border-0"
                 disabled={isLoading}
               >
                 {isLoading ? "Signing in..." : "Sign In"}

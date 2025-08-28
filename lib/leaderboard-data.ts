@@ -47,7 +47,7 @@ export const mockLeaderboardUsers: LeaderboardUser[] = [
   },
   {
     id: "3",
-    image:"/img/13.jpg",
+    image:"/img/144.jpg",
     name: "Adimin Imo",
     username: "alexk",
     xp: 2520,
