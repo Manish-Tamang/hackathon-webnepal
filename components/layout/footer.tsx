@@ -4,7 +4,7 @@ import Image from "next/image"
 export function Footer() {
     return (
         <div className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl mt-20">
-            <div className="max-w-6xl mx-auto px-8">
+            <div className="max-w-4xl mx-auto px-8">
                 <div className="grid md:grid-cols-4 gap-12">
                     <div className="space-y-4">
                         <div className="flex items-center space-x-2">

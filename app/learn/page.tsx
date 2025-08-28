@@ -27,8 +27,8 @@ export default function LearnPage() {
   };
 
   return (
-    <div className="container max-w-7xl py-8">
-      <div className="mb-8">
+    <div className="container max-w-5xl py-8">
+      <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-[#2a6b4a] mb-2">
           Learning Dashboard
         </h1>
@@ -36,7 +36,7 @@ export default function LearnPage() {
           Track your progress and continue your learning journey
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8 justify-center">
         {Object.entries(lessons).map(([topic, topicLessons]) => {
           const stats = getTopicStats(topic);
           const progress = (stats.completed / stats.total) * 100;
@@ -71,13 +71,13 @@ export default function LearnPage() {
       </div>
 
       {/* Topic Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 justify-center">
         {Object.entries(lessons).map(([topic, topicLessons]) => {
           const stats = getTopicStats(topic);
 
           return (
             <Link key={topic} href={`/learn/${topic}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Card className="border rounded-[4px]  transition-shadow cursor-pointer">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl capitalize">{topic}</CardTitle>
@@ -108,4 +108,4 @@ export default function LearnPage() {
       </div>
     </div>
   );
-} 
+}

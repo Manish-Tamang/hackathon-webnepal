@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { MessageCircle, Send, Lightbulb, AlertCircle, Heart, Copy, Check } from "lucide-react"
 import { GeminiAIService } from "@/lib/gemini-ai"
+import { IoSend } from "react-icons/io5";
+import { VscFeedback } from "react-icons/vsc";
 
 interface AIFeedbackProps {
   code: string
@@ -38,7 +40,7 @@ export default function AIFeedback({ code, language, lessonId, expectedOutput }:
 
   const handleAskQuestion = async () => {
     if (!question.trim()) return
-    
+
     setLoading(true)
     try {
       const aiResponse = await GeminiAIService.generateResponse(question, createMockLesson(), code)
@@ -77,7 +79,7 @@ export default function AIFeedback({ code, language, lessonId, expectedOutput }:
     }
   }
 
-  const renderFeedback = (type: string, data: string[], icon: React.ReactNode, badgeVariant: "secondary" | "destructive", badgeText: string) => 
+  const renderFeedback = (type: string, data: string[], icon: React.ReactNode, badgeVariant: "secondary" | "destructive", badgeText: string) =>
     data.length > 0 && (
       <div className="flex items-start gap-2">
         {icon}
@@ -111,29 +113,29 @@ export default function AIFeedback({ code, language, lessonId, expectedOutput }:
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <Button 
-          onClick={handleGetFeedback} 
+        <Button
+          onClick={handleGetFeedback}
           disabled={loading}
-          variant="outline" 
+          variant="outline"
           size="sm"
-          className="w-full"
+          className="w-full bg-amber-300 hover:bg-amber-400 rounded-[4px]"
         >
-          <Lightbulb className="w-4 h-4 mr-2" />
           Get Feedback
+          <VscFeedback className="w-4 h-4 mr-2" />
         </Button>
 
         {feedback && (
           <div className="space-y-3 p-3 bg-gray-50 rounded-lg">
-            {renderFeedback('compliments', feedback.compliments, 
-              <Heart className="w-4 h-4 text-green-600 mt-0.5" />, 
+            {renderFeedback('compliments', feedback.compliments,
+              <Heart className="w-4 h-4 text-green-600 mt-0.5" />,
               'secondary', 'Good Job!')}
-            
-            {renderFeedback('suggestions', feedback.suggestions, 
-              <Lightbulb className="w-4 h-4 text-blue-600 mt-0.5" />, 
+
+            {renderFeedback('suggestions', feedback.suggestions,
+              <Lightbulb className="w-4 h-4 text-blue-600 mt-0.5" />,
               'secondary', 'Suggestion')}
-            
-            {renderFeedback('errors', feedback.errors, 
-              <AlertCircle className="w-4 h-4 text-red-600 mt-0.5" />, 
+
+            {renderFeedback('errors', feedback.errors,
+              <AlertCircle className="w-4 h-4 text-red-600 mt-0.5" />,
               'destructive', 'Fix This')}
           </div>
         )}
@@ -145,14 +147,14 @@ export default function AIFeedback({ code, language, lessonId, expectedOutput }:
             onChange={(e) => setQuestion(e.target.value)}
             rows={2}
           />
-          <Button 
-            onClick={handleAskQuestion} 
+          <Button
+            onClick={handleAskQuestion}
             disabled={loading || !question.trim()}
             size="sm"
             className="w-full"
           >
-            <Send className="w-4 h-4 mr-2" />
             {loading ? "Thinking..." : "Ask Question"}
+            <IoSend className="w-4 h-4 mr-2" />
           </Button>
         </div>
 
@@ -173,7 +175,7 @@ export default function AIFeedback({ code, language, lessonId, expectedOutput }:
                 )}
               </Button>
             </div>
-            <div 
+            <div
               className="text-sm text-gray-800 prose prose-sm max-w-none"
               dangerouslySetInnerHTML={{ __html: formatResponse(response) }}
             />
