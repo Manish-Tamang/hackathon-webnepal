@@ -71,13 +71,13 @@ export function HeroSection() {
               <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h10M4 18h7"/></svg>
               </div>
-              <div className="overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50">
+              <div className="overflow-hidden rounded-[4px]border border-emerald-100 bg-emerald-50">
                 <img src="/img/3.jpg" alt="People coding together on laptops" className="h-40 w-full object-cover" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">Interactive Learning Environment</h3>
               <p className="mt-2 text-sm leading-6 text-gray-600">Engage with hands-on coding exercises and real-time feedback, making complex concepts easy to grasp.</p>
               <div className="mt-4">
-                <Button asChild variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50">
+                <Button asChild variant="outline" className="border-[#3D8B63] rounded-[4px] text-emerald-700  hover:text-white hover:bg-[#3D8B63]">
                   <Link href="/learn">Start Coding Labs</Link>
                 </Button>
               </div>
@@ -87,13 +87,13 @@ export function HeroSection() {
               <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-6.219-8.56"/></svg>
               </div>
-              <div className="overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50">
+              <div className="overflow-hidden rounded-[4px] border border-emerald-100 bg-emerald-50">
                 <img src="/img/2.jpg" alt="Engineer exploring AI models" className="h-40 w-full object-cover" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">AI-Powered Learning Paths</h3>
               <p className="mt-2 text-sm leading-6 text-gray-600">Receive personalized guidance and instant code analysis from our AI tutor, tailored to your progress.</p>
               <div className="mt-4">
-                <Button asChild variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50">
+                <Button asChild variant="outline" className="border-[#3D8B63] rounded-[4px] text-emerald-700  hover:text-white hover:bg-[#3D8B63]">
                   <Link href="/learn">Explore AI Features</Link>
                 </Button>
               </div>
@@ -103,13 +103,13 @@ export function HeroSection() {
               <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M9 20H4v-2a3 3 0 015.356-1.857M12 14a4 4 0 100-8 4 4 0 000 8z"/></svg>
               </div>
-              <div className="overflow-hidden rounded-xl border border-emerald-100 bg-emerald-50">
+              <div className="overflow-hidden rounded-[4px] border border-emerald-100 bg-emerald-50">
                 <img src="/img/1.JPG" alt="Developers collaborating and discussing" className="h-40 w-full object-cover" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">Community and Support</h3>
               <p className="mt-2 text-sm leading-6 text-gray-600">Join a thriving community of developers, get help, share insights, and collaborate on projects.</p>
               <div className="mt-4">
-                <Button asChild variant="outline" className="border-emerald-200 text-emerald-700 hover:bg-emerald-50">
+                <Button asChild variant="outline" className="border-[#3D8B63] rounded-[4px] text-emerald-700 hover:text-white hover:bg-[#3D8B63]">
                   <Link href="/leaderboard">Join Our Community</Link>
                 </Button>
               </div>

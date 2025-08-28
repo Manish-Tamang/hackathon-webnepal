@@ -20,7 +20,7 @@ export default function AboutPage() {
             </section>
 
             <section className="mb-16">
-                <Card className="border border-[#52AF83]/20">
+                <Card>
                     <CardContent className="p-8">
                         <div className="mx-auto max-w-3xl">
                             <h2 className="mb-6 text-3xl font-bold text-[#2a6b4a]">Our Mission</h2>
@@ -42,7 +42,7 @@ export default function AboutPage() {
             </section>
 
             <section className="mb-16">
-                <Card className="border border-[#52AF83]/20">
+                <Card className="">
                     <CardContent className="p-8">
                         <div className="mx-auto max-w-3xl">
                             <h2 className="mb-6 text-3xl font-bold text-[#2a6b4a]">What Makes Us Different</h2>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                         <div className="mx-auto max-w-3xl text-center">
                             <h2 className="mb-6 text-3xl font-bold text-[#2a6b4a]">Get in Touch</h2>
                             <p className="mb-8 text-lg text-muted-foreground">
-                                Have questions, feedback, or just want to say hello? We'd love to hear from you!
+                                Have questions, feedback, or just want to say hello? We&#8217;d love to hear from you!
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <Button asChild variant="outline" size="lg" className="border-[#52AF83] text-[#52AF83] hover:bg-[#52AF83] hover:text-white">
