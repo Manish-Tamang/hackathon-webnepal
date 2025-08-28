@@ -3,10 +3,15 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Code, Github, Heart, Mail, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 
 
 export default function AboutPage() {
     return (
+        <>  
+        <Header/>
+        
         <main className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
             <section className="mb-16">
                 <div className="mx-auto max-w-3xl text-center">
@@ -96,8 +101,31 @@ export default function AboutPage() {
                     </CardContent>
                 </Card>
             </section>
+              {/* Team Section */}
+        <section className="mt-20 mb-10 ">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-gray-900">Our Team</h3>
+            <p className="mt-3 text-gray-600">The people building Web Nepal.</p>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
+            {[
+              { name: "Manish gole tamang", role: "Fullstack Developer ", image: "/img/Manish Gole Tamang.jpg" },
+              { name: "Nux Gajurel", role: "Front-end Developer ", image: "/img/Nuxgajurel.jpg" },
+              { name: "Bipan Deuja", role: "Front-end Developer ", image: "/img/bpindeuja.jpg" },
+              { name: "Imohang Chamling Rai", role: "Assistant Developer ", image: "/img/imo.jpg" },
+            ].map((member) => (
+              <article key={member.name} className="rounded-[4px] bg-white p-6 text-center  ring-1 ring-gray-100">
+                <div className="mx-auto h-24 w-24 overflow-hidden rounded-full ring-4 ring-emerald-100">
+                  <img src={member.image} alt={`Team member ${member.name}`} className="h-full w-full object-cover" />
+                </div>
+                <h4 className="mt-4 text-lg font-semibold text-gray-900">{member.name}</h4>
+                <p className="text-sm text-emerald-700">{member.role}</p>
+              </article>
+            ))}
+          </div>
+        </section>
             <section className="mb-16">
-                <Card className="border border-[#52AF83]/20">
+                <Card className="border rounded-[4px] border-[#52AF83]/20">
                     <CardContent className="p-8">
                         <div className="mx-auto max-w-3xl text-center">
                             <h2 className="mb-6 text-3xl font-bold text-[#2a6b4a]">Get in Touch</h2>
@@ -121,5 +149,7 @@ export default function AboutPage() {
                 </Card>
             </section>
         </main>
+        <Footer/>
+        </>
     )
 }
