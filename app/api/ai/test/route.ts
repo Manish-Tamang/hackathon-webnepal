@@ -13,8 +13,11 @@ export async function GET() {
     const testLesson = {
       id: "test",
       title: "Test Lesson",
+      description: "A test lesson for AI integration",
       content: "This is a test lesson for AI integration",
       code: "<h1>Hello World</h1>",
+      language: "html",
+      difficulty: "beginner",
       duration: "5 min",
       completed: false
     }

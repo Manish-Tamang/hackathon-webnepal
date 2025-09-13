@@ -10,13 +10,6 @@ const getAI = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-type CourseLesson = {
-  title: any;
-  duration: any;
-  content: any;
-  code: string;
-};
-
 export interface Lesson {
   id: string;
   title: string;
@@ -25,6 +18,10 @@ export interface Lesson {
   language: string;
   difficulty: string;
   duration: string;
+}
+
+export interface CourseLesson extends Lesson {
+  content: string;
 }
 
 export interface CodeAnalysis {
