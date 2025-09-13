@@ -23,7 +23,7 @@ export default function LearnLayout({
               <LearningSidebar />
             </Sidebar>
           )}
-          <SidebarInset className="flex-1">
+          <SidebarInset className="flex-1 flex items-center justify-center">
             {children}
           </SidebarInset>
         </div>
