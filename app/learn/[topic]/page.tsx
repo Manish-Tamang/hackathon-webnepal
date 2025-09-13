@@ -23,6 +23,7 @@ export default function TopicPage({ params }: { params: Promise<{ topic: string 
     const getLessonProgress = (subtopic: string) =>
         progress.find(p => p.subtopic === subtopic);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const getTechnologies = (lesson: any) => {
         const techs = [];
         if (lesson.initialCode.html) techs.push('HTML');

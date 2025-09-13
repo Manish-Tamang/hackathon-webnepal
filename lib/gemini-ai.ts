@@ -1,17 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { GoogleGenAI } from "@google/genai";
 
 // Initialize with proper error handling
 const getAI = () => {
-  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || "AIzaSyDAC4FdhE95RN-KR3zgZlZj914DBwyTiYI";
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || "xxxxxxxxxxxxx";
   if (!apiKey) {
     throw new Error("NEXT_PUBLIC_GEMINI_API_KEY is not configured");
   }
   return new GoogleGenAI({ apiKey });
 };
-
-export interface CourseLesson extends Lesson {
-  content: string;
-}
 
 export interface Lesson {
   id: string;
@@ -21,6 +18,10 @@ export interface Lesson {
   language: string;
   difficulty: string;
   duration: string;
+}
+
+export interface CourseLesson extends Lesson {
+  content: string;
 }
 
 export interface CodeAnalysis {

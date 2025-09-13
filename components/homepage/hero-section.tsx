@@ -33,14 +33,14 @@ export function HeroSection() {
                   asChild
                   className="px-6 py-5 text-base bg-[#52AF83] hover:bg-[#3d8b63] text-white transition-colors rounded-lg"
                 >
-                  <Link href="/learn">Start Learning Now</Link>
+                  <Link href="/learn/html">Start Learning Now</Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   className="px-6 py-5 text-base border-2 border-[#52AF83] text-[#52AF83] hover:bg-[#52AF83]/10 transition-colors rounded-lg"
                 >
-                  <Link href="#s">Explore Courses</Link>
+                  <Link href="/learn">Explore Courses</Link>
                 </Button>
               </div>
               <div className="flex items-center gap-4 pt-4 justify-center">
@@ -107,12 +107,28 @@ export function HeroSection() {
           </p>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Card 1 */}
           <article className="group rounded-[4px] bg-white p-6 shadow-sm ring-1 ring-gray-100 transition hover:shadow-md">
+            <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h10M4 18h7"
+                />
+              </svg>
+            </div>
             <div className="overflow-hidden rounded-[4px]border border-emerald-100 bg-emerald-50">
               <img
                 src="/img/3.jpg"
                 alt="People coding together on laptops"
-                className="h-40 w-full object-cover mb-2"
+                className="h-40 w-full object-cover"
               />
             </div>
             <h3 className="text-lg font-semibold text-gray-900">
@@ -132,12 +148,28 @@ export function HeroSection() {
               </Button>
             </div>
           </article>
+          {/* Card 2 */}
           <article className="group rounded-[4px] bg-white p-6 shadow-sm ring-1 ring-gray-100 transition hover:shadow-md">
+            <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-6.219-8.56"
+                />
+              </svg>
+            </div>
             <div className="overflow-hidden rounded-[4px] border border-emerald-100 bg-emerald-50">
               <img
                 src="/img/2.jpg"
                 alt="Engineer exploring AI models"
-                className="h-40 w-full object-cover mb-2"
+                className="h-40 w-full object-cover"
               />
             </div>
             <h3 className="text-lg font-semibold text-gray-900">
@@ -157,12 +189,28 @@ export function HeroSection() {
               </Button>
             </div>
           </article>
+          {/* Card 3 */}
           <article className="group rounded-[4px] bg-white p-6 shadow-sm ring-1 ring-gray-100 transition hover:shadow-md">
+            <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M9 20H4v-2a3 3 0 015.356-1.857M12 14a4 4 0 100-8 4 4 0 000 8z"
+                />
+              </svg>
+            </div>
             <div className="overflow-hidden rounded-[4px] border border-emerald-100 bg-emerald-50">
               <img
                 src="/img/1.JPG"
                 alt="Developers collaborating and discussing"
-                className="h-40 w-full object-cover mb-2"
+                className="h-40 w-full object-cover"
               />
             </div>
             <h3 className="text-lg font-semibold text-gray-900">
