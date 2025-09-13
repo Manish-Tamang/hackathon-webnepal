@@ -126,7 +126,7 @@ export function HeroSection() {
             </div>
             <div className="overflow-hidden rounded-[4px]border border-emerald-100 bg-emerald-50">
               <img
-                src="/img/3.jpg"
+                src="/img/3.JPG"
                 alt="People coding together on laptops"
                 className="h-40 w-full object-cover"
               />
