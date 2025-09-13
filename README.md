@@ -1,7 +1,8 @@
 <div align="center">
 
-# Web Nepal
-**by team godawari**
+<img src="public/img/2.png" alt="Web Nepal Logo" width="200" />
+
+**by Team Godawari**
 
 </div>
 
