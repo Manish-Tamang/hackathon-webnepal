@@ -9,7 +9,9 @@ const getAI = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-import type { Lesson as CourseLesson } from "@/lib/courses";
+export interface CourseLesson extends Lesson {
+  content: string;
+}
 
 export interface Lesson {
   id: string;

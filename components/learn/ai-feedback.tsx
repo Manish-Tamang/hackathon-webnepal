@@ -32,9 +32,13 @@ export default function AIFeedback({ code, language, lessonId, expectedOutput }:
   const [copied, setCopied] = useState(false)
 
   const createMockLesson = () => ({
+    id: lessonId,
     title: `Lesson ${lessonId}`,
+    description: `Practice ${language} coding`,
     content: `Practice ${language} coding`,
     code: expectedOutput || "",
+    language: language,
+    difficulty: "beginner",
     duration: "15 minutes"
   })
 
